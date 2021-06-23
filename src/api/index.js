@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const url = "https://data.cityofchicago.org/resource/yhhz-zm2v.json";
 
-const url2 = 'https://www.chicagocityscape.com/api/index.php'
+const url2 = 'https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetCountyTestResults'
 
 
 export const fetchData = async () => {
@@ -45,12 +45,12 @@ export const fetchData = async () => {
     }
   };
 
-
- export const testing = async () => {
+// Illinois County's data (name, tested, cases, deaths, lon/lat )
+ export const fetchCountyData = async () => {
       try {
-          const res = await axios.get(url2)
+          const { data: { CountyName, tested, confirmed_cases, deaths, latitude, longitude  } } = await axios.get(url2)
 
-          console.log(res)
+          
 
       } catch (error) {
           console.error(error)
