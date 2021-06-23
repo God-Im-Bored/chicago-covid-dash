@@ -1,26 +1,29 @@
 import React from 'react'
 import styles from './App.module.css'
-import { fetchData, testing} from './api'
+import { fetchCountyData } from './api'
 import { Cards, Charts, Map } from "./components";
 
 class App extends React.Component {
   state = {
-    data: {}
+    countyData: []
   }
 
   async componentDidMount() {
-    const apiData = await fetchData()
-
-    const test = await testing()
-
-    console.log(test)
-
+    // const apiData = await fetchData()
     // console.log(apiData)
+
+    const covidData = await fetchCountyData()
+
+    this.setState({
+      countyData: covidData
+    })
+
     
     
   }
 
   render() {
+    
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>

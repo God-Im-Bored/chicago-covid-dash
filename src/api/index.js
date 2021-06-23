@@ -48,9 +48,17 @@ export const fetchData = async () => {
 // Illinois County's data (name, tested, cases, deaths, lon/lat )
  export const fetchCountyData = async () => {
       try {
-          const { data: { CountyName, tested, confirmed_cases, deaths, latitude, longitude  } } = await axios.get(url2)
+          const { data } = await axios.get(url2)
 
-          
+          return data.map((county) => ({
+              county: county.CountyName,
+              tested: county.tested,
+              cases: county.confirmed_cases,
+              deaths: county.deaths,
+              latitude: county.latitude,
+              longitude: county.longitude
+
+          }))
 
       } catch (error) {
           console.error(error)
