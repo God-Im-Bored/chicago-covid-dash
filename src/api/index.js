@@ -2,6 +2,8 @@ import axios from 'axios'
 
 const url = "https://data.cityofchicago.org/resource/yhhz-zm2v.json";
 
+const url2 = 'https://www.chicagocityscape.com/api/index.php'
+
 
 export const fetchData = async () => {
     try {
@@ -42,5 +44,17 @@ export const fetchData = async () => {
       console.error(error);
     }
   };
+
+
+ export const testing = async () => {
+      try {
+          const res = await axios.get(url2)
+
+          console.log(res)
+
+      } catch (error) {
+          console.error(error)
+      }
+  }
 
 

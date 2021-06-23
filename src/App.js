@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './App.module.css'
-import { fetchData } from './api'
+import { fetchData, testing} from './api'
 import { Cards, Charts, Map } from "./components";
 
 class App extends React.Component {
@@ -11,7 +11,11 @@ class App extends React.Component {
   async componentDidMount() {
     const apiData = await fetchData()
 
-    console.log(apiData)
+    const test = await testing()
+
+    console.log(test)
+
+    // console.log(apiData)
     
     
   }
