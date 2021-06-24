@@ -1,26 +1,20 @@
 import React from 'react'
 import styles from './App.module.css'
-import { fetchCountyData, fetchStateData } from './api'
+import { fetchCountyData } from './api'
 import { Cards, Charts, Map } from "./components";
 
 class App extends React.Component {
   state = {
-    countyData: []
+    countyData: [],
+    stateData: {}
   }
 
   async componentDidMount() {
-    // const apiData = await fetchData()
-    // console.log(apiData)
-
-    const $ = await fetchStateData()
-    console.log($)
-
-    
-
     const covidData = await fetchCountyData()
 
     this.setState({
-      countyData: covidData
+      countyData: covidData,
+      stateData: covidData[0]
     })
 
     
@@ -28,7 +22,7 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>
