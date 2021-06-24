@@ -41,7 +41,7 @@ const Cards = ({ data: { cases, county, deaths, tested } }) => {
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Infected
+              Deaths
             </Typography>
             <Typography variant="h5">
               <CountUp start={0} end={deaths} duration={2.5} separator="," />
@@ -61,7 +61,7 @@ const Cards = ({ data: { cases, county, deaths, tested } }) => {
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Infected
+              Tested
             </Typography>
             <Typography variant="h5">
               <CountUp start={0} end={tested} duration={2.5} separator="," />
