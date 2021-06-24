@@ -22,14 +22,14 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    const { stateData} = this.state
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>
         
         <Charts />
         <Map />
-        <Cards />
+        <Cards data={stateData} />
 
 
       </div>
