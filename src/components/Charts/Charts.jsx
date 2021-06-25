@@ -17,6 +17,13 @@ const Charts = ( { data } ) => {
 
     const lineChart = dailyData.length ? (
         <Line 
+            options={{
+                scales: {
+                    y: {
+                        max: 5000000
+                    }
+                }
+            }}
             data={{
                 labels: dailyData.map(({ date }) => date),
                 datasets: [
@@ -35,7 +42,7 @@ const Charts = ( { data } ) => {
                     {
                         data: dailyData.map(({ tested }) => tested),
                         label: 'Tested',
-                        borderColor: 'rgba(0, 0, 0, 0.7)',
+                        borderColor: 'rgba(0, 255, 0, 0.5)',
                         fill: true
                     }
                 ]
@@ -48,9 +55,9 @@ const Charts = ( { data } ) => {
     
     
     return (
-        dailyData.length ? console.log(dailyData) : null,
+        // dailyData.length ? console.log(dailyData) : null,
         <div className={styles.container}>
-            <h2>Charts</h2>
+            
             {lineChart}
         </div>
     )
