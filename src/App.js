@@ -1,42 +1,35 @@
-import React from 'react'
-import styles from './App.module.css'
-import { fetchCountyData } from './api'
+import React from "react";
+import styles from "./App.module.css";
+import { fetchCountyData } from "./api";
 import { Cards, Charts } from "./components";
 
 class App extends React.Component {
   state = {
     countyData: [],
-    stateData: {}
-  }
+    stateData: {},
+  };
 
   async componentDidMount() {
-    const covidData = await fetchCountyData()
+    const covidData = await fetchCountyData();
 
     this.setState({
       countyData: covidData,
-      stateData: covidData[0]
-    })
-
-    
-    
+      stateData: covidData[0],
+    });
   }
 
   render() {
-    const { stateData} = this.state
+    const { stateData, countyData } = this.state;
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>
         <Cards data={stateData} />
-        
-        <Charts />
+
+        <Charts data={countyData} />
         {/* <Map /> */}
-
-
       </div>
-    )
+    );
   }
 }
 
-
-export default App
-
+export default App;

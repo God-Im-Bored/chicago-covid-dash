@@ -5,6 +5,8 @@ const zipUrl = "https://data.cityofchicago.org/resource/yhhz-zm2v.json";
 const countiesUrl =
   "https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetCountyTestResults";
 
+const dailyDataUrl = 'https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetIllinoisCases'
+
 
 
 export const fetchData = async () => {
@@ -61,9 +63,20 @@ export const fetchCountyData = async () => {
   }
 };
 
-// Illinois state data
-export const fetchStateData = async () => {
-  // const { data } = await axios.get("https://coronavirus.illinois.gov/");
-  // console.log(cheerio.load(data));
-  // return cheerio.load(data);
-};
+export const fetchDailyData = async () => {
+  try {
+    const { data } = await axios.get(dailyDataUrl)
+
+    const modified = data.map((dailyData) => ({
+      cases: dailyData.confirmed_cases,
+      deaths: dailyData.deaths,
+      tested: dailyData.total_tested,
+      date: new Date(dailyData.testDate).toLocaleString(),
+    }))
+
+    return modified
+
+  } catch (error) {
+    console.error(error)
+  }
+}
