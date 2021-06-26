@@ -11,6 +11,9 @@ const Cards = ({ data: { cases, county, deaths, tested } }) => {
   if (!cases) {
       return '...Loading'
   }
+
+  
+
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="space-between">

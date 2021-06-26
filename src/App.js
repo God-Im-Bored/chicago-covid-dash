@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./App.module.css";
-import { fetchCountyData } from "./api";
+import { fetchCountyData, fetchSelectedCountyData } from "./api";
 import { Cards, Charts, Counties } from "./components";
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
     countyNames: [], // array of county string names
     stateData: {}, // singular object with state cd data
     county: '', // string of county name selected
-    selected: {}
+    selected: {} // singular object with state cd data
 
   };
 
@@ -26,14 +26,14 @@ class App extends React.Component {
   handleChange = async (county) => {
     const { countyData } = this.state;
 
-    if (countyData) {
+    if (countyData && county) {
       const len = countyData.length;
 
       for (let i = 0; i < len; i++) {
         if (countyData[i].county === county) {
           this.setState({
             county: county,
-            selected: countyData[i]
+            stateData: countyData[i]
           })
         }
       }
@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>
-        <Cards data={stateData} selected={selected} />
+        <Cards data={stateData} />
         <Counties data={countyNames} handleChange={this.handleChange} />
         <Charts county={county} selected={selected}/>
       </div>

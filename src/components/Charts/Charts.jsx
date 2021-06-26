@@ -7,7 +7,7 @@ import styles from './Charts.module.css'
 const Charts = ( { county, selected } ) => {
     const [dailyData, setDailyData] = useState([])
 
-    console.log(selected)
+    // console.log(selected)
 
     useEffect(() => {
         const fetchAPI = async () => {
