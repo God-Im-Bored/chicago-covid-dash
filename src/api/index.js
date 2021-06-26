@@ -45,6 +45,31 @@ export const fetchData = async () => {
   }
 };
 
+// Selected county data (name, tested, cases, deaths, lon/lat)
+export const fetchSelectedCountyData = async (county) => {
+  try {
+    const { data } = await axios.get(countiesUrl)
+    const len = data.length
+    
+    for (let i = 0; i < len; i++) {
+      if (data[i].county === county) {
+        return {
+          county: county.CountyName,
+          tested: county.tested,
+          cases: county.confirmed_cases,
+          deaths: county.deaths,
+          latitude: county.latitude,
+          longitude: county.longitude
+        }
+      }
+    }
+    
+
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 // Illinois County's data (name, tested, cases, deaths, lon/lat )
 export const fetchCountyData = async () => {
   try {

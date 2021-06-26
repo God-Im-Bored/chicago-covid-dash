@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <pre>Chicago Covid Mapping</pre>
-        <Cards data={stateData} />
+        <Cards data={stateData} selected={selected} />
         <Counties data={countyNames} handleChange={this.handleChange} />
         <Charts county={county} selected={selected}/>
       </div>

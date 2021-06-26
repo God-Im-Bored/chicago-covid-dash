@@ -6,7 +6,8 @@ import styles from './Charts.module.css'
 
 const Charts = ( { county, selected } ) => {
     const [dailyData, setDailyData] = useState([])
-    console.log(county, selected)
+
+    console.log(selected)
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -82,7 +83,7 @@ const Charts = ( { county, selected } ) => {
         
         <div className={styles.container}>
             
-            {county
+            {!selected.county === 'Illinois'
             ? barChart
             : lineChart
             }
