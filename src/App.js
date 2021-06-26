@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./App.module.css";
-import { fetchCountyData, fetchSelectedCountyData } from "./api";
+import { fetchCountyData } from "./api";
 import { Cards, Charts, Counties } from "./components";
 
 class App extends React.Component {
@@ -33,7 +33,8 @@ class App extends React.Component {
         if (countyData[i].county === county) {
           this.setState({
             county: county,
-            stateData: countyData[i]
+            stateData: countyData[i],
+            selected: countyData[i]
           })
         }
       }

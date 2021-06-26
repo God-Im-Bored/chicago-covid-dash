@@ -4,10 +4,11 @@ import { Line, Bar } from 'react-chartjs-2'
 import styles from './Charts.module.css'
 
 
+
 const Charts = ( { county, selected } ) => {
     const [dailyData, setDailyData] = useState([])
 
-    // console.log(selected)
+    
 
     useEffect(() => {
         const fetchAPI = async () => {
@@ -83,10 +84,9 @@ const Charts = ( { county, selected } ) => {
         
         <div className={styles.container}>
             
-            {!selected.county === 'Illinois'
-            ? barChart
-            : lineChart
-            }
+            {selected.county === undefined || selected.county === 'Illinois'
+                ? lineChart
+                : barChart}
         </div>
     )
 }

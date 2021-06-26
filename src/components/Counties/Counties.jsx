@@ -8,7 +8,7 @@ const Counties = ({ data, handleChange }) => {
             <NativeSelect defaultValue='' onChange={(e) => {
                 handleChange(e.target.value)
             }}>
-                <option value=''>Illinois</option>
+                <option value=''>Choose Location</option>
                 {data.map((county, i) => (
                     <option key={i} value={county}>
                         {county}

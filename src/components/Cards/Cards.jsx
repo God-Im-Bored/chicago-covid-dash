@@ -5,14 +5,9 @@ import cx from "classnames";
 import styles from "./Cards.module.css";
 
 const Cards = ({ data: { cases, county, deaths, tested } }) => {
-  
-  
-
   if (!cases) {
-      return '...Loading'
+    return "...Loading";
   }
-
-  
 
   return (
     <div className={styles.container}>
@@ -75,16 +70,6 @@ const Cards = ({ data: { cases, county, deaths, tested } }) => {
             </Typography>
           </CardContent>
         </Grid>
-
-
-
-
-
-
-
-
-
-
       </Grid>
     </div>
   );
