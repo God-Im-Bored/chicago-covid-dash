@@ -30,8 +30,11 @@ Navigate to http://localhost:3000/
 ## Live Demo
 
 ## Built With
-* Create React App - web framework 
-* Material-UI - styling framework
-* ChartJs - charting tool
+* [Create React App](https://reactjs.org/docs/create-a-new-react-app.html) - web framework 
+* [Material-UI](https://material-ui.com/) - styling framework
+* [ChartJs](https://www.chartjs.org/) - charting tool
 
 ## Data From
+All data provided courtesy of the [IDPH](https://www.dph.illinois.gov/covid19/data-portal)
+* [Daily updates](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetIllinoisCases)
+* [County covid results](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetCountyTestResults/)
