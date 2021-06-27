@@ -30,8 +30,8 @@ Navigate to http://localhost:3000/
 ## Live Demo
 
 ## Built With
-- Create React App - web framework 
-- Material-UI - styling framework
-- ChartJs - charting tool
+* Create React App - web framework 
+* Material-UI - styling framework
+* ChartJs - charting tool
 
 ## Data From
