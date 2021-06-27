@@ -36,5 +36,5 @@ Navigate to http://localhost:3000/
 
 ## Data From
 All data provided courtesy of the [IDPH](https://www.dph.illinois.gov/covid19/data-portal)
-* [Daily updates](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetIllinoisCases)
-* [County covid results](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetCountyTestResults/)
+* [Daily updates](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetIllinoisCases) - state snapshot data api
+* [County covid results](https://idph.illinois.gov/DPHPublicInformation/api/COVIDExport/GetCountyTestResults/) - covid data for counties api
